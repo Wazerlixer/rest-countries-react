@@ -1,19 +1,23 @@
 export const currencies = [
     {
-        unit: "$",
+        unit: "USD",
         rate: 1,
     },
     {
-        unit: "euro",
-        rate: 1,
+        unit: "EURO",
+        rate: 0.93,
     },
     {
         unit: "UAH",
-        rate: 1,
+        rate: 35.98,
     },
     {
         unit: "KAZ",
-        rate: 1,
+        rate: 465.76,
+    },
+    {
+        unit: "GBP",
+        rate: 0.82,
     },
 
 ]
