@@ -5,7 +5,7 @@ export const TemperatureConverter = () => {
 
     return (
         <div className="tempertaure-converter">
-            <input type="number" id="fahrenheit" value={((currentTemperature * 9 / 5) + 32).toFixed(2)}
+            <input type="number" id="fahrenheit" value={((currentTemperature * 9 / 5) + 32).toFixed(1)}
                 onChange={
                     (event) => {
                         setCurrentTemperature((event.target.value - 32) * 5 / 9)
@@ -14,7 +14,7 @@ export const TemperatureConverter = () => {
             />
             <label htmlFor="fahrenheit">fahrenheit</label>
             <br />
-            <input type="number" id="celsium" value={(currentTemperature).toFixed(2)}
+            <input type="number" id="celsium" value={ currentTemperature }
                 onChange={
                     (event) => {
                         setCurrentTemperature(event.target.value)

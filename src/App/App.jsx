@@ -1,5 +1,5 @@
-import {CurrencyExchange} from "../pages/CurrencyExchange"
-import { TemperatureConverter } from "../pages/TemperatureConverter";
+import { RouterProvider } from "react-router-dom";
+import { Router } from "../Router/Router";
 
 import "./style.sass"
 
@@ -7,8 +7,7 @@ export const App = () => {
 
   return (
     <div className="App">
-      {/* <CurrencyExchange /> */}
-      <TemperatureConverter/>
+      <RouterProvider router={Router} />
     </div>
   );
 }
