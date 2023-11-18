@@ -1,13 +1,9 @@
-import { Link } from "react-router-dom"
-
-import { Routes } from "../../Router/Routes"
+import { Outlet } from "react-router-dom"
 
 export const NewRouterExample = () => {
     return(
         <div className="router-example">
-            <Link to={`./${Routes?.currencyExchange}`}>Currency Exchange</Link>
-            <br />
-            <Link to={`./${Routes?.temperatureConverter}`}>Temeprature Comverter</Link>
+            <Outlet />
         </div>
     )
 }

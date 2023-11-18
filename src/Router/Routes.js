@@ -1,5 +1,6 @@
 export const Routes = {
-    homePage: "",
-    currencyExchange: "currency-exchange",
-    temperatureConverter: "temperature-converter"
+    homePage: "/rest-countries-react",
+    main:"/rest-countries-react/main",
+    currencyExchange: "/rest-countries-react/currency-exchange",
+    temperatureConverter: "/rest-countries-react/temperature-converter"
 }
