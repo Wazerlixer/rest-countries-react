@@ -7,7 +7,9 @@ export const MainPage = () => {
         <div className="main-page">
             <Link to={Routes?.currencyExchange}>Currency Exchange</Link>
             <br />
-            <Link to={Routes?.temperatureConverter}>Temeprature Comverter</Link>
+            <Link to={Routes?.temperatureConverter}>Temeprature Converter</Link>
+            <br />
+            <Link to={Routes?.timeConverter}>Time Converter</Link>
         </div>
     )
 }

@@ -26,6 +26,10 @@ export const Router = createBrowserRouter(
                 {
                     path: "temperature-converter",
                     element: <TemperatureConverter />
+                },
+                {
+                    path: "current-time",
+                    element: <CurrentTime />
                 }
             ]
         },
