@@ -11,8 +11,8 @@ import { TimeConverter } from "../pages/TimeConverter"
 export const Router = createBrowserRouter(
     [
         {
-            path: "",
-            element: <Navigate to="rest-countries-react/main" />
+            path: "rest-countries-react",
+            element: <Navigate to="/rest-countries-react/main" />
         },
         {
             path: "rest-countries-react",
