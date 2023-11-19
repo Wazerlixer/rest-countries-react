@@ -4,6 +4,9 @@ import { NewRouterExample } from "../pages/NewRouterExample"
 import { CurrencyExchange } from "../pages/CurrencyExchange"
 import { MainPage } from "../pages/MainPage"
 import { TemperatureConverter } from "../pages/TemperatureConverter"
+import { CurrentTime } from "../pages/TimeConverter/components/CurrentTime"
+import { TimeConverter } from "../pages/TimeConverter"
+
 
 export const Router = createBrowserRouter(
     [
@@ -30,6 +33,10 @@ export const Router = createBrowserRouter(
                 {
                     path: "current-time",
                     element: <CurrentTime />
+                },
+                {
+                    path: "time-converter",
+                    element: <TimeConverter />
                 }
             ]
         },

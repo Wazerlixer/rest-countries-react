@@ -1,1 +1,1 @@
-export {timeConverter} from "./TimeConverter"
+export {TimeConverter} from "./TimeConverter"
