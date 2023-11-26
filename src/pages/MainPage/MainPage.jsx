@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-
+import "./style.sass"
 import { Routes } from "../../Router/Routes"
 
 export const MainPage = () => {

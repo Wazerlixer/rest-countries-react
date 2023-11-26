@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./style.sass"
 
 export const TimeConverter = () => {
     const [currentTime, setCurrentTime] = useState(
@@ -32,7 +33,6 @@ export const TimeConverter = () => {
                     `${currentTime.hours >= 10 ? currentTime.hours : `0${currentTime.hours}`}:${currentTime.minutes >= 10 ? currentTime.minutes : `0${currentTime.minutes}`}`
                 }
                 onChange={
-
                     (event) => {
                         console.log(event.target.value)
                         setCurrentTime(

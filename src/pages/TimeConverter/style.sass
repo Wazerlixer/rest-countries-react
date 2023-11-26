@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap')
+
+
+$утренний-цвет: #FFD700 // Солнечный жёлтый
+$дневной-цвет: #87CEEB // Яркий голубой
+$вечерний-цвет: #FF6347 // Тёмно-красный
+$ночной-цвет: #2F4F4F // Тёмно-серый
+
+$время-утро: 6
+$время-день: 12
+$время-вечер: 18
+$время-ночь: 24
+
+.time-converter
+    padding: 20px
+    border-radius: 10px
+    display: flex
+    text-align: center
+    color: white
+    font-size: 50px
+    animation: изменение-цвета $время-ночь * 1s infinite alternate
+    justify-content: space-evenly
+    flex-direction: column-reverse
+    height: 50vh
+    font-family: 'Roboto', sans-serif
+    
+
+@keyframes изменение-цвета
+    0%
+        background-color: $ночной-цвет
+
+    #{$время-утро * 4}%
+        background-color: $ночной-цвет
+
+    #{$время-утро * 4 + 1}%
+        background-color: $утренний-цвет
+
+    #{$время-день * 4}%
+        background-color: $утренний-цвет
+
+    #{$время-день * 4 + 1}%
+        background-color: $дневной-цвет
+
+    #{$время-вечер * 4}%
+        background-color: $дневной-цвет
+
+    #{$время-вечер * 4 + 1}%
+        background-color: $вечерний-цвет
+
+    #{$время-ночь * 4}%
+        background-color: $вечерний-цвет
+
+    100% 
+        background-color: $ночной-цвет
