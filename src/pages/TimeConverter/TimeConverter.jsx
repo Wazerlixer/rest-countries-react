@@ -11,12 +11,36 @@ export const TimeConverter = () => {
     const [currentTime, setCurrentTime] = useState(
         {
             minutes: new Date().getMinutes(),
-            hours: new Date().getHours()
+            hours: (new Date().getHours() - (new Date().getTimezoneOffset() / -60))
         }
     )
 
+        console.log(currentTime?.hours)
+
     return (
         <div className="time-converter">
+            <div className="my-current-input">
+                <input type="time"
+                    value={
+                        getValidateTime(
+                            {
+                                minutes: currentTime.minutes,
+                                hours: (currentTime.hours + (new Date().getTimezoneOffset() / -60))
+                            }
+                        )
+                    }
+                    onChange={
+                        (event) => {
+                            let currentChangeValue = {
+                                hours: event.target.value.substring(0, 2) - (new Date().getTimezoneOffset() / -60),
+                                minutes: event.target.value.substring(3)
+                            }
+
+                            setCurrentTime(currentChangeValue);
+                        }
+                    }
+                />
+            </div>
             {
                 timeLines?.map(
                     (timeLine) => {
@@ -32,11 +56,10 @@ export const TimeConverter = () => {
 
                         return (
                             <div className="time-line" key={timeLine?.name}>
-                                <input type="time" id={timeLine?.name} 
+                                <input type="time" id={timeLine?.name}
                                     value={getValidateTime(currentTimeLine)}
                                     onChange={
                                         (event) => {
-                                            console.log(event.target.value)
                                             let currentChangeValue = {
                                                 hours: event.target.value.substring(0, 2),
                                                 minutes: event.target.value.substring(3)
