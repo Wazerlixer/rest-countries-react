@@ -32,7 +32,7 @@ export const TimeConverter = () => {
 
                         return (
                             <div className="time-line" key={timeLine?.name}>
-                                <input type="time" id={timeLine?.name}
+                                <input type="time" id={timeLine?.name} 
                                     value={getValidateTime(currentTimeLine)}
                                     onChange={
                                         (event) => {
