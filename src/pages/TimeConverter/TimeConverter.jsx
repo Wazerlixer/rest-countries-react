@@ -1,4 +1,9 @@
 import { useState } from "react";
+
+import { timeLines } from "../../constants/timeLines";
+
+import { getValidateTime } from "../../utility/getValidateTime";
+
 import "./style.sass"
 
 export const TimeConverter = () => {
@@ -11,40 +16,36 @@ export const TimeConverter = () => {
 
     return (
         <div className="time-converter">
-            <input type="time" id="msk"
-                value={
-                    `${currentTime.hours + 1 >= 10 ? currentTime.hours + 1 : `0${currentTime.hours + 1}`}:${currentTime.minutes >= 10 ? currentTime.minutes : `0${currentTime.minutes}`}`
-                }
-                onChange={
-                    (event) => {
-                        console.log(event.target.value)
-                        setCurrentTime(
-                            {
-                                hours: +event?.target?.value?.substring(0, 2) - 1,
-                                minutes: +event?.target?.value?.substring(3)
-                            }
+            {
+                timeLines?.map(
+                    (timeLine) => {
+                        let currentTimeLine = {
+                            hours: currentTime?.hours + timeLine?.value?.hours,
+                            minutes: currentTime?.minutes + timeLine?.value?.minutes,
+                        }
+
+                        return (
+                            <div className="time-line">
+                                <input type="time" id={timeLine?.name}
+                                    value={getValidateTime(currentTimeLine)}
+                                    onChange={
+                                        (event) => {
+                                            console.log(event.target.value)
+                                            setCurrentTime(
+                                                {
+                                                    hours: +event?.target?.value?.substring(0, 2) - timeLine?.value?.hours,
+                                                    minutes: +event?.target?.value?.substring(3) - timeLine?.value?.minutes
+                                                }
+                                            )
+                                        }
+                                    }
+                                />
+                                <label htmlFor={timeLine?.name}>{timeLine?.name}</label>
+                            </div>
                         )
                     }
-                }
-            />
-            <label htmlFor="msk">msk</label>
-            <input type="time" id="kyiv"
-                value={
-                    `${currentTime.hours >= 10 ? currentTime.hours : `0${currentTime.hours}`}:${currentTime.minutes >= 10 ? currentTime.minutes : `0${currentTime.minutes}`}`
-                }
-                onChange={
-                    (event) => {
-                        console.log(event.target.value)
-                        setCurrentTime(
-                            {
-                                hours: +event?.target?.value?.substring(0, 2),
-                                minutes: +event?.target?.value?.substring(3)
-                            }
-                        )
-                    }
-                }
-            />
-            <label htmlFor="kyiv">kyiv</label>
+                )
+            }
         </div>
     )
 
