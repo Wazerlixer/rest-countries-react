@@ -7,10 +7,11 @@ import { getValidateTime } from "../../utility/getValidateTime";
 import "./style.sass"
 
 export const TimeConverter = () => {
+
     const [currentTime, setCurrentTime] = useState(
         {
-            minutes: 0,
-            hours: 0
+            minutes: new Date().getMinutes(),
+            hours: new Date().getHours()
         }
     )
 
