@@ -4,5 +4,6 @@ export const Routes = {
     currencyExchange: "/rest-countries-react/currency-exchange",
     temperatureConverter: "/rest-countries-react/temperature-converter",
     currentTime: "/rest-countries-react/current-time",
-    timeConverter: "/rest-countries-react/time-converter"
+    timeConverter: "/rest-countries-react/time-converter",
+    hooksWay: "/rest-countries-react/hooks-way"
 }

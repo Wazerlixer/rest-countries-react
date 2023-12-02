@@ -6,6 +6,7 @@ import { MainPage } from "../pages/MainPage"
 import { TemperatureConverter } from "../pages/TemperatureConverter"
 import { CurrentTime } from "../pages/TimeConverter/components/CurrentTime"
 import { TimeConverter } from "../pages/TimeConverter"
+import { HooksWay } from "../pages/HooksWay"
 
 
 export const Router = createBrowserRouter(
@@ -37,6 +38,10 @@ export const Router = createBrowserRouter(
                 {
                     path: "time-converter",
                     element: <TimeConverter />
+                },
+                {
+                    path: "hooks-way",
+                    element: <HooksWay />
                 }
             ]
         },
