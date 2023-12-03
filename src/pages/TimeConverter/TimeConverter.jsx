@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { timeLines } from "../../constants/timeLines";
 
+import { colorChange } from "../../utility/colorChange";
 import { getValidateTime } from "../../utility/getValidateTime";
 
 import "./style.sass"
+
 
 export const TimeConverter = () => {
 
@@ -15,7 +17,7 @@ export const TimeConverter = () => {
         }
     )
 
-        console.log(currentTime?.hours)
+    useEffect(() => colorChange(currentTime.hours), [currentTime.hours])
 
     return (
         <div className="time-converter">
@@ -32,8 +34,8 @@ export const TimeConverter = () => {
                     onChange={
                         (event) => {
                             let currentChangeValue = {
-                                hours: event.target.value.substring(0, 2) - (new Date().getTimezoneOffset() / -60),
-                                minutes: event.target.value.substring(3)
+                                hours: +event.target.value.substring(0, 2) - (new Date().getTimezoneOffset() / -60),
+                                minutes: +event.target.value.substring(3)
                             }
 
                             setCurrentTime(currentChangeValue);
