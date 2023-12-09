@@ -27,12 +27,12 @@ export const colours = [
     {
         name: "Color6",
         value: 6,
-        color: "rgb(69, 170, 242)"
+        color: "rgb(0, 105, 209)"
     },
     {
         name: "Color7",
         value: 7,
-        color: "rgb(74, 185, 242)"
+        color: "rgb(0, 110, 209)"
     },
     {
         name: "Color8",
@@ -42,7 +42,7 @@ export const colours = [
     {
         name: "Color9",
         value: 9,
-        color: "rgb(2 119 205)"
+        color: "rgb(2 126 205)"
     },
     {
         name: "Color10",
@@ -62,12 +62,12 @@ export const colours = [
     {
         name: "Color13",
         value: 13,
-        color: "#ffff99"
+        color: "rgb(0, 159, 255)"
     },
     {
         name: "Color14",
         value: 14,
-        color: "#ffffb2"
+        color: "rgb(227 227 97)"
     },
     {
         name: "Color15",
