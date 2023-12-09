@@ -13,11 +13,14 @@ export const TimeConverter = () => {
     const [currentTime, setCurrentTime] = useState(
         {
             minutes: new Date().getMinutes(),
-            hours: (new Date().getHours() - (new Date().getTimezoneOffset() / -60))
+            hours: (new Date().getHours())
         }
     )
 
-    useEffect(() => colorChange(currentTime.hours), [currentTime.hours])
+    useEffect(() => {
+        console.log(currentTime.hours)
+        colorChange(currentTime.hours);
+    }, [currentTime.hours])
 
     return (
         <div className="time-converter">
@@ -27,14 +30,14 @@ export const TimeConverter = () => {
                         getValidateTime(
                             {
                                 minutes: currentTime.minutes,
-                                hours: (currentTime.hours + (new Date().getTimezoneOffset() / -60))
+                                hours: (currentTime.hours)
                             }
                         )
                     }
                     onChange={
                         (event) => {
                             let currentChangeValue = {
-                                hours: +event.target.value.substring(0, 2) - (new Date().getTimezoneOffset() / -60),
+                                hours: +event.target.value.substring(0, 2),
                                 minutes: +event.target.value.substring(3)
                             }
 
@@ -49,7 +52,7 @@ export const TimeConverter = () => {
 
                         let currentMinutes = currentTime?.minutes + timeLine?.value?.minutes;
                         let extraHour = currentMinutes >= 60 ? 1 : 0;
-                        let currentHoures = currentTime?.hours + timeLine?.value?.hours + extraHour;
+                        let currentHoures = currentTime?.hours + timeLine?.value?.hours + extraHour - (new Date().getTimezoneOffset() / -60);
 
                         let currentTimeLine = {
                             minutes: currentMinutes >= 60 ? currentMinutes % 60 : currentMinutes,
