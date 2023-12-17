@@ -7,3 +7,5 @@ export const HooksWay = () => {
         </div>
     )
 }
+
+// class HooksWay 

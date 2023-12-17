@@ -18,7 +18,6 @@ export const TimeConverter = () => {
     )
 
     useEffect(() => {
-        console.log(currentTime.hours)
         colorChange(currentTime.hours);
     }, [currentTime.hours])
 
